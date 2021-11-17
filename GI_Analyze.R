@@ -1,3 +1,4 @@
+# Retrieving Data
 library(rvest)
 
 data1 <- read_html("https://genshin-impact.fandom.com/wiki/Characters/Comparison")
