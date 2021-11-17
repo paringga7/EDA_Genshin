@@ -1,3 +1,4 @@
+# Retrieving Data
 library(rvest)
 
 data1 <- read_html("https://genshin-impact.fandom.com/wiki/Characters/Comparison")
@@ -16,7 +17,7 @@ genshin <- merge(df1, df2, by = "Name")
 genshin[genshin==""] = "Unknown"
 head(genshin)
 
-# Visualizing in Bar Chart
+# General Visualization
 library(dplyr)
 library(ggplot2)
 library(ggpubr)
