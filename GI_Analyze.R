@@ -15,7 +15,7 @@ df2 <- df2[!myvars]
 
 genshin <- merge(df1, df2, by = "Name")
 genshin[genshin==""] = "Unknown"
-head(genshin)
+View(genshin)
 
 # General Visualization
 library(dplyr)
