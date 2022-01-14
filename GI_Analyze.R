@@ -90,26 +90,3 @@ ggplot(genshin, aes(x = ATK, y = DEF)) +
   labs(title = "All Characters", color = "Element", shape = "Weapon") +
   geom_text(aes(label = Name), size = 2, nudge_y = -7) +
   theme_bw()
-
-# Ascension Stats Visualization
-asc <- count(genshin, Ascension.Stat)
-asc <- asc[order(asc$n),]
-asc$Ascension.Stat <- factor(asc$Ascension.Stat, levels = asc$Ascension.Stat)
-
-ggplot(data = asc, aes(x = Ascension.Stat, n)) +
-  geom_bar(stat = "identity", color = "blue", fill = "skyblue") +
-  labs(title = "Genshin Impact Character Based On Ascension Stat", y = "Frequency") +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-# ATK ~ Ascension.Stat
-ggplot(genshin, aes(x = Ascension.Stat, y = ATK)) +
-  geom_point() +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-# DEF ~ Ascension.Stat
-ggplot(genshin, aes(x = Ascension.Stat, y = DEF)) +
-  geom_point() +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
